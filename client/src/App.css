@@ -3,6 +3,12 @@
   background: #ecdfcc;
 }
 
+html {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 body {
   font-family: "Arial", sans-serif;
   background-color: #181c14;
@@ -80,7 +86,7 @@ select:focus {
 }
 
 .generated-output {
-  font-size: 18px;
+  font-size: 1rem;
   color: #ecdfcc;
   width: 100%;
   margin-bottom: 10px;
@@ -112,4 +118,69 @@ select:focus {
 .copy-button:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .secret-generator-app {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .output-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .generated-output {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .secret-generator-app {
+    max-width: 80vw;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .generated-output {
+    font-size: 14px;
+  }
+
+  .copy-button,
+  .generate-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 305px) {
+
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  .secret-generator-app {
+    max-width: 90vw;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .generated-output {
+    font-size: 12px;
+  }
+
+  .copy-button,
+  .generate-button {
+    padding: 6px;
+    font-size: 12px;
+  }
 }
