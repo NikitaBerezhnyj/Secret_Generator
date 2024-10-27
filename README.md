@@ -1,6 +1,6 @@
 # Secret Generator
 
-#### Repository translates: [українська :ukraine:](#meganom-poligraph-ukraine), [english :uk:](#meganom-poligraph-uk)
+#### Repository translates: [українська :ukraine:](#secret-generator-ukraine), [english :uk:](#secret-generator-uk)
 
 ## Secret Generator :ukraine:
 

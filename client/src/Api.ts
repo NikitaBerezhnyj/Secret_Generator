@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://192.168.0.106:3001/api";
+const API_URL = "http://localhost:3001/api";
 
 interface ResponseData {
   token?: string;

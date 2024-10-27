@@ -1,23 +1,18 @@
-# Встановлюємо базовий образ
-FROM node:16
+# Specify the base image
+FROM node:18
 
-# Встановлюємо робочу директорію
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Копіюємо package.json та package-lock.json
+# Copy the package files and install dependencies
 COPY package*.json ./
-
-# Встановлюємо залежності
 RUN npm install
 
-# Копіюємо весь код
+# Copy the rest of the client code
 COPY . .
 
-# Будуємо проект
-RUN npm run build
-
-# Виставляємо порт
+# Expose the port that Vite runs on
 EXPOSE 5173
 
-# Команда для запуску клієнта
+# Start the client application
 CMD ["npm", "run", "dev"]
