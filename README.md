@@ -14,20 +14,12 @@
 - Візуальний зворотній зв'язок при успішному копіюванні
 - Чистий та інтуїтивно зрозумілий користувацький інтерфейс
 
-## Використовувані технології
-
-- React
-- TypeScript
-- CSS
-- React-іконки
-- Web Crypto API
-
 ## Встановлення
 
 1. Клонуємо репозиторій:
 
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/NikitaBerezhnyj/Secret_Generator.git
 ```
 
 2. Встановіть залежності:
@@ -115,20 +107,12 @@ Simple React application for generating JWT secrets and secure passwords.
 - Visual feedback when copying is successful
 - Clean and intuitive user interface
 
-## Technologies Used
-
-- React
-- TypeScript
-- CSS
-- React Icons
-- Web Crypto API
-
 ## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/NikitaBerezhnyj/Secret_Generator.git
 ```
 
 2. Install dependencies:
