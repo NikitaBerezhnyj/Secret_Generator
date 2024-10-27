@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  server:
+    build:
+      context: ./server
+    volumes:
+      - ./server:/usr/src/app
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      HOSTNAME: "192.168.0.106"
+
+  client:
+    build:
+      context: ./client
+    volumes:
+      - ./client:/usr/src/app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - server

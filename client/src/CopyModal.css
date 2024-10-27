@@ -1,0 +1,70 @@
+.copy-modal-container {
+  width: 100px;
+  position: fixed;
+  top: -100px;
+  right: 20px;
+  border-radius: 8px;
+  padding: 4px 16px;
+  text-align: center;
+  background-color: #ecdfcc;
+  z-index: 9999;
+  animation: fadeInDown 0.25s ease forwards;
+}
+
+.copy-modal-container.hide {
+  animation: fadeOutUp 0.25s ease forwards;
+}
+
+.copy-modal-container p {
+  color: #181c14;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #181c14;
+  border-radius: 2px;
+  animation: progressAnimation 3s linear;
+}
+
+@keyframes fadeInDown {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    top: 20px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
