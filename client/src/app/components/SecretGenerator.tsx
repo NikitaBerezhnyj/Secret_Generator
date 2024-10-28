@@ -1,10 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import CopyModal from "./CopyModal";
-import { getPassword, getJwtSecret } from "./Api";
-import "./App.css";
+import { getPassword, getJwtSecret } from "../api/Api";
+import styles from "../page.module.css";
 
-function App() {
+export default function SecretGenerator() {
   const [selectedType, setSelectedType] = useState<"jwt" | "password">("jwt");
   const [generatedValue, setGeneratedValue] = useState<string>("");
   const [isModalVisible, setModalVisible] = useState(false);
@@ -28,19 +30,19 @@ function App() {
         console.log("Copied to clipboard!");
         setModalVisible(true);
       })
-      .catch(err => console.error("Failed to copy text:", err));
+      .catch((err) => console.error("Failed to copy text:", err));
   };
 
   return (
-    <div className="secret-generator-app">
+    <div className={`${styles["page"]} ${styles["secret-generator-app"]}`}>
       <h1>Secret Generator</h1>
-      <div className="generator-container">
-        <div className="type-selector">
+      <div className={styles["generator-container"]}>
+        <div className={styles["type-selector"]}>
           <label htmlFor="typeSelect">Select Type:</label>
           <select
             id="typeSelect"
             value={selectedType}
-            onChange={e =>
+            onChange={(e) =>
               setSelectedType(e.target.value as "jwt" | "password")
             }
           >
@@ -48,12 +50,12 @@ function App() {
             <option value="password">Password</option>
           </select>
         </div>
-        <div className="output-container">
-          <p className="generated-output">
+        <div className={styles["output-container"]}>
+          <p className={styles["generated-output"]}>
             {generatedValue || "Select type and click generate"}
           </p>
           <button
-            className="copy-button"
+            className={styles["copy-button"]}
             disabled={!generatedValue}
             onClick={handleCopyClick}
             aria-label="Copy to clipboard"
@@ -61,7 +63,10 @@ function App() {
             <FaRegCopy />
           </button>
         </div>
-        <button className="generate-button" onClick={handleGenerateClick}>
+        <button
+          className={styles["generate-button"]}
+          onClick={handleGenerateClick}
+        >
           Generate
         </button>
       </div>
@@ -76,5 +81,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
