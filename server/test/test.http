@@ -1,0 +1,7 @@
+@apiURL = http://localhost:3001/api
+
+###
+GET {{apiURL}}/jwt-secret
+
+###
+GET {{apiURL}}/password

@@ -3,14 +3,8 @@ import axios from "axios";
 const API_URL = "http://localhost:3001/api";
 
 interface ResponseData {
-  token?: string;
-  message?: string;
-  user?: {
-    id: string;
-    username: string;
-    email: string;
-    links: string[];
-  };
+  jwtSecret?: string;
+  password?: string;
 }
 
 export const getJwtSecret = async (): Promise<ResponseData> => {

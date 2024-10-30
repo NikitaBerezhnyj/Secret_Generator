@@ -14,7 +14,7 @@ export const jwtSecretGenerate = async (
       byte => byte.toString(16).padStart(2, "0")
     ).join("");
 
-    return res.status(200).send({ token: jwtSecret });
+    return res.status(200).send({ jwtSecret: jwtSecret });
   } catch (err) {
     console.error("Error generating JWT secret:", err);
     return res.status(500).send({ message: "Internal Server Error" });
@@ -32,7 +32,7 @@ export const passwordGenerate = async (
       characters.charAt(Math.floor(Math.random() * characters.length))
     ).join("");
 
-    return res.status(200).send({ message: password });
+    return res.status(200).send({ password: password });
   } catch (err) {
     console.error("Error generating password:", err);
     return res.status(500).send({ message: "Internal Server Error" });

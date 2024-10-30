@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaRegCopy } from "react-icons/fa";
 import CopyModal from "./CopyModal";
 import { getPassword, getJwtSecret } from "../api/Api";
-import styles from "../page.module.css";
+import "../styles/SecretGenerator.css";
 
 export default function SecretGenerator() {
   const [selectedType, setSelectedType] = useState<"jwt" | "password">("jwt");
@@ -16,7 +16,7 @@ export default function SecretGenerator() {
       const result =
         selectedType === "jwt" ? await getJwtSecret() : await getPassword();
       const value =
-        selectedType === "jwt" ? result.token || "" : result.message || "";
+        selectedType === "jwt" ? result.jwtSecret || "" : result.password || "";
       setGeneratedValue(value);
     } catch (error) {
       console.error("Error generating value:", error);
@@ -30,19 +30,19 @@ export default function SecretGenerator() {
         console.log("Copied to clipboard!");
         setModalVisible(true);
       })
-      .catch((err) => console.error("Failed to copy text:", err));
+      .catch(err => console.error("Failed to copy text:", err));
   };
 
   return (
-    <div className={`${styles["page"]} ${styles["secret-generator-app"]}`}>
+    <div className="secret-generator-app">
       <h1>Secret Generator</h1>
-      <div className={styles["generator-container"]}>
-        <div className={styles["type-selector"]}>
+      <div className="generator-container">
+        <div className="type-selector">
           <label htmlFor="typeSelect">Select Type:</label>
           <select
             id="typeSelect"
             value={selectedType}
-            onChange={(e) =>
+            onChange={e =>
               setSelectedType(e.target.value as "jwt" | "password")
             }
           >
@@ -50,12 +50,12 @@ export default function SecretGenerator() {
             <option value="password">Password</option>
           </select>
         </div>
-        <div className={styles["output-container"]}>
-          <p className={styles["generated-output"]}>
+        <div className="output-container">
+          <p className="generated-output">
             {generatedValue || "Select type and click generate"}
           </p>
           <button
-            className={styles["copy-button"]}
+            className="copy-button"
             disabled={!generatedValue}
             onClick={handleCopyClick}
             aria-label="Copy to clipboard"
@@ -63,10 +63,7 @@ export default function SecretGenerator() {
             <FaRegCopy />
           </button>
         </div>
-        <button
-          className={styles["generate-button"]}
-          onClick={handleGenerateClick}
-        >
+        <button className="generate-button" onClick={handleGenerateClick}>
           Generate
         </button>
       </div>

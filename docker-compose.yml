@@ -8,9 +8,7 @@ services:
       - ./client:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - "5173:5173"
-    environment:
-      - VITE_API_URL=http://localhost:3001
+      - "3000:3000"
     depends_on:
       - server
 
@@ -24,4 +22,4 @@ services:
       - "3001:3001"
     environment:
       PORT: 3001
-      HOSTNAME: "0.0.0.0"
+      HOSTNAME: "localhost"

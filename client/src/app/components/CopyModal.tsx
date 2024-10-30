@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/CopyModal.module.css";
+import "../styles/CopyModal.css";
 
 interface CopyModalProps {
   show: boolean;
@@ -27,16 +27,12 @@ const CopyModal: React.FC<CopyModalProps> = ({ show, onClose }) => {
   }, [show, onClose, isVisible]);
 
   return (
-    <div
-      className={`${styles["copy-modal-container"]} ${
-        isVisible ? "" : styles.hide
-      }`}
-    >
+    <div className={`copy-modal-container ${isVisible ? "" : "hide"}`}>
       {isVisible && (
         <>
-          <p className={styles["copy-modal-container p"]}>Text copied!</p>
-          <div className={styles["progress-bar"]}>
-            <div className={styles["progress"]} />
+          <p className="copy-modal-text">Text copied!</p>
+          <div className="progress-bar">
+            <div className="progress" />
           </div>
         </>
       )}
