@@ -1,13 +1,13 @@
 :root {
-    --color-background-dark: #242424;
-    --color-background-light: #3c3d37;
-    --color-text-primary: #ecdfcc;
-    --color-border: #ecdfcc;
-    --color-code-background: #575757;
-    --color-code-text: #b7b7b7;
-    --color-page-background: #181c14;
-    --color-button-background: #697565;
-    --color-border-focus: #ccc;
-    --color-border-hover: rgba(236, 223, 204, 0.1);
-    --color-button-disabled: #ccc;
+  --color-background-dark: #242424;
+  --color-background-light: #3c3d37;
+  --color-text-primary: #ecdfcc;
+  --color-border: #ecdfcc;
+  --color-code-background: #575757;
+  --color-code-text: #b7b7b7;
+  --color-page-background: #181c14;
+  --color-button-background: #697565;
+  --color-border-focus: #ccc;
+  --color-border-hover: rgba(236, 223, 204, 0.1);
+  --color-button-disabled: #ccc;
 }
