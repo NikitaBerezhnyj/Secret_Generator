@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001/api";
+const API_URL = "http://localhost:5000/api";
 
 interface ResponseData {
   jwtSecret?: string;

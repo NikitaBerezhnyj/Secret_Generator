@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  client:
+  secret-gen-client:
     build:
       context: ./client
     volumes:
@@ -10,16 +10,26 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - server
+      - secret-gen-server
+    networks:
+      - app-network
+    container_name: secret-gen-client
 
-  server:
+  secret-gen-server:
     build:
       context: ./server
     volumes:
       - ./server:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - "3001:3001"
+      - "5000:5000"
     environment:
-      PORT: 3001
-      HOSTNAME: "localhost"
+      - PORT=5000
+      - HOSTNAME=0.0.0.0
+    networks:
+      - app-network
+    container_name: secret-gen-server
+
+networks:
+  app-network:
+    driver: bridge

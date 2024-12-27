@@ -6,7 +6,7 @@ dotenv.config();
 const app = connectionServer();
 
 const host: string = process.env.HOSTNAME || "localhost";
-const port: number = Number(process.env.PORT) || 3000;
+const port: number = Number(process.env.PORT) || 5000;
 
 const startServer = async (): Promise<void> => {
   try {
